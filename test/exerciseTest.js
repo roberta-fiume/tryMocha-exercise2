@@ -1,23 +1,39 @@
 var assert = chai.assert;
+var expect = chai.expect;
 
-describe('ReturnDiv', function() {
-    it('should return div', function() {
+describe("ReturnDiv", function() {
+    it("should return div text", function() {
         // Given
-        document.getElementById('id');
+        var divId = "div-try";
+        var expectedText = "Hello";
         // When
-        var result = returnDiv();
+        var result = returnDivText(divId);
         // Then
-        assert.equal(result, 'div-try');
+        assert.equal(result, expectedText);
     });
 });
 
-describe('SumElements', function() {
-    it('should sum elmenents', function() {
+describe("SumElements", function() {
+    it("should sum elmenents", function() {
         // Given
-       lemons, oranges;
+        var number1 = 5;
+        var number2 = 9;
         // When
-        var result = sumElements(3, 5);
+        var result = sumElements(number1, number2);
         // Then
-        assert.equal(result, 8 );
+        assert.equal(result, 14);
     });
 });
+
+describe("ReturnTextOfElementsWithClass", function() {
+    it("should return innerHTML text of elements with wanted class", function() {
+        // Given
+        var className = "div-class";
+        var expectedText = ["First Div", "Second Div"];
+        // When
+        var result = returnTextOfElementsWithClass(className);
+        // Then
+        expect(result).to.deep.equal(expectedText);
+    })
+})
+
